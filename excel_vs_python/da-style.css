@@ -1,0 +1,550 @@
+/* ============================================================
+   GOOGLE FONTS
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+
+  /* --- Color palette --- */
+  --bg:         #f2ede6;        /* warm parchment base */
+  --surface:    #faf8f4;        /* card / section surface */
+  --surface-2:  #ede8e0;        /* alternate row, hover state */
+
+  --ink:        #1c1a17;        /* primary text — near black, warm */
+  --muted:      #6b6457;        /* secondary text, captions */
+  --faint:      #d9d2c7;        /* borders, dividers */
+
+  --gold:       #a0732a;        /* primary accent */
+  --gold-light: #f0e4cc;        /* tinted background for callouts */
+  --gold-rule:  #c9a05a;        /* decorative lines */
+
+  --excel:      #1e6b3c;        /* Excel label accent */
+  --python:     #2b5797;        /* Python label accent */
+
+  /* --- Typography --- */
+  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-prose:   'Lora', Georgia, serif;
+  --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+
+  /* --- Layout --- */
+  --max-width: 800px;
+  --gap: clamp(1.5rem, 4vw, 2.5rem);
+
+  /* --- Transitions --- */
+  --ease: 0.2s ease;
+}
+
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-prose);
+  font-size: 1rem;
+  line-height: 1.75;
+  min-height: 100vh;
+}
+
+/* Accessible focus ring */
+*:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity var(--ease);
+}
+
+a:hover { opacity: 0.75; }
+
+
+/* ============================================================
+   TYPOGRAPHY HELPERS
+   ============================================================ */
+
+/* Eyebrow label above section headings */
+.label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+
+/* De-emphasized metadata */
+.muted {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gap);
+}
+
+
+/* ============================================================
+   HEADER
+   A typographically-led masthead. No gradient, no hero image —
+   just confident type on the warm background, anchored by a
+   thick bottom rule.
+   ============================================================ */
+header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(3rem, 8vw, 5.5rem) var(--gap) clamp(2rem, 5vw, 3rem);
+  border-bottom: 2px solid var(--ink);
+}
+
+.header-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 1.25rem;
+}
+
+/* The italic word in the headline */
+header h1 em {
+  font-family: var(--font-prose);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold);
+}
+
+.header-deck {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 52ch;
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+}
+
+/* Small metadata row beneath the deck */
+.header-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 2rem;
+}
+
+.header-meta .meta-item {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.header-meta .meta-item strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+
+/* ============================================================
+   MAIN & SECTIONS
+   Each thematic block separated by a hairline rule.
+   ============================================================ */
+main {
+  padding-bottom: clamp(3rem, 8vw, 6rem);
+}
+
+.section {
+  border-bottom: 1px solid var(--faint);
+  padding: clamp(1.5rem, 4vw, 2.5rem) 0;
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  margin-bottom: 0.75rem;
+}
+
+.section > p {
+  max-width: 62ch;
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+
+/* ============================================================
+   CALLOUT BOX
+   Gold left-border, tinted background.
+   Used for editorial asides and key observations.
+   ============================================================ */
+.callout {
+  border-left: 3px solid var(--gold-rule);
+  background: var(--gold-light);
+  padding: 1rem 1.4rem;
+  font-family: var(--font-prose);
+  font-style: italic;
+  font-size: 0.93rem;
+  color: var(--ink);
+  line-height: 1.65;
+  margin: 1.75rem 0;
+}
+
+
+/* ============================================================
+   ACCORDION — Five Business Questions
+   Built on native <details>/<summary> — no JS required.
+
+   Structure:
+     <details class="...">
+       <summary>
+         <span class="q-num">Q 01</span>
+         <span class="q-title">Question text</span>
+         <span class="q-toggle">+</span>
+       </summary>
+       <div class="q-body"> ... </div>
+     </details>
+   ============================================================ */
+.accordion {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--faint);
+}
+
+.accordion details {
+  border-bottom: 1px solid var(--faint);
+}
+
+/* Clickable summary row */
+.accordion details summary {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  cursor: pointer;
+  list-style: none;
+  -webkit-appearance: none;
+  transition: background var(--ease);
+}
+
+/* Remove browser default disclosure triangle */
+.accordion details summary::-webkit-details-marker { display: none; }
+
+/* Question number — e.g. "Q 01" */
+.accordion .q-num {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  flex-shrink: 0;
+  padding-top: 0.1em;
+}
+
+/* Question heading text */
+.accordion .q-title {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 600;
+  color: var(--ink);
+  flex: 1;
+  line-height: 1.3;
+}
+
+/* +/− toggle on the right */
+.accordion .q-toggle {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: var(--muted);
+  flex-shrink: 0;
+  transition: transform var(--ease), color var(--ease);
+  user-select: none;
+  line-height: 1;
+}
+
+/* When open: rotate + into ×, highlight gold */
+.accordion details[open] summary .q-toggle {
+  transform: rotate(45deg);
+  color: var(--gold);
+}
+
+/* Open state: gold left border accent */
+.accordion details[open] {
+  border-left: 3px solid var(--gold-rule);
+  padding-left: 1.1rem;
+  margin-left: -1.1rem;
+}
+
+/* Expanded content */
+.accordion .q-body {
+  padding: 0.25rem 0 1.6rem 2.3rem;
+  animation: accordionOpen 0.22s ease both;
+}
+
+@keyframes accordionOpen {
+  from { opacity: 0; transform: translateY(-5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.accordion .q-body p {
+  font-size: 0.95rem;
+  color: var(--ink);
+  max-width: 60ch;
+  line-height: 1.75;
+  margin-bottom: 0.75rem;
+}
+
+/* Inline stat pill — highlight a specific number */
+.accordion .stat {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  background: var(--gold-light);
+  color: var(--gold);
+  padding: 0.15em 0.55em;
+  border-radius: 3px;
+}
+
+/* Chart thumbnail inside an accordion item */
+.accordion .q-chart {
+  display: block;
+  margin-top: 1.25rem;
+  border: 1px solid var(--faint);
+  overflow: hidden;
+  max-width: 460px;
+  text-decoration: none;
+  transition: border-color var(--ease);
+}
+
+.accordion .q-chart:hover {
+  border-color: var(--gold-rule);
+  opacity: 1;
+}
+
+.accordion .q-chart img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.28s ease;
+}
+
+.accordion .q-chart:hover img {
+  transform: scale(1.015);
+}
+
+.accordion .q-chart figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: var(--muted);
+  padding: 0.45rem 0.75rem;
+  background: var(--surface-2);
+  letter-spacing: 0.04em;
+}
+
+
+/* ============================================================
+   TOOL COMPARISON TABLE
+   Deliberately restrained — type and rules only.
+   No rounded corners, no box shadows.
+   ============================================================ */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.75rem 0;
+  font-size: 0.875rem;
+}
+
+.comparison-table thead th {
+  text-align: left;
+  padding: 0.6rem 1rem 0.6rem 0;
+  border-bottom: 2px solid var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.comparison-table thead th.col-excel  { color: var(--excel); }
+.comparison-table thead th.col-python { color: var(--python); }
+
+.comparison-table tbody tr {
+  border-bottom: 1px solid var(--faint);
+  transition: background var(--ease);
+}
+
+.comparison-table tbody tr:hover {
+  background: var(--surface-2);
+}
+
+.comparison-table td {
+  padding: 0.9rem 1rem 0.9rem 0;
+  vertical-align: top;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* Row label */
+.comparison-table td:first-child {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  width: 26%;
+  padding-right: 1.5rem;
+}
+
+/* Winner badges */
+.badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.18em 0.55em;
+  border-radius: 2px;
+  margin-top: 0.45rem;
+}
+
+.badge-excel  { background: #d4edda; color: var(--excel); }
+.badge-python { background: #dce8f7; color: var(--python); }
+.badge-tie    { background: var(--surface-2); color: var(--muted); }
+
+
+/* ============================================================
+   BUTTONS
+   Flat, monospace-labeled, ink-bordered.
+   ============================================================ */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.65rem 1.3rem;
+  border: 1.5px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+  transition: background var(--ease), color var(--ease), border-color var(--ease);
+}
+
+.btn:hover {
+  background: var(--ink);
+  color: var(--bg);
+  opacity: 1;
+}
+
+.btn.primary {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.btn.primary:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+}
+
+
+/* ============================================================
+   PAGE LOAD ANIMATION
+   Sections fade up once on load, staggered.
+   Skipped entirely for users who prefer reduced motion.
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  header                { animation: fadeUp 0.45s ease both; }
+  .section:nth-child(1) { animation: fadeUp 0.45s 0.08s ease both; }
+  .section:nth-child(2) { animation: fadeUp 0.45s 0.14s ease both; }
+  .section:nth-child(3) { animation: fadeUp 0.45s 0.20s ease both; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 600px) {
+  /* Allow table to scroll horizontally on small screens */
+  .comparison-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  /* Remove the indent-based left accent on mobile to avoid overflow */
+  .accordion details[open] {
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+    border-bottom: 2px solid var(--gold-rule);
+  }
+}

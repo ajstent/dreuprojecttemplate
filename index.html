@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <title>Portfolio | Bess Hagan</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <nav class="navbar">
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="/Bess Hagan Resume 2026.pdf" target="_blank">Resume</a></li>
+    <button id="dark-toggle" class="dark-toggle-btn" aria-label="Toggle dark mode">
+      <i class="fas fa-moon"></i>
+    </button>
+  </ul>
+</nav>
+
+<header class="hero-banner">
+  <div class="hero-content">
+    <h1>Bess Hagan</h1>
+    <p>· Computer Science Graduate · December 2025 ·</p>
+    <p>Entry-level Data Analyst with experience in Python, SQL, and applied research.</p>
+  </div>
+</header>
+
+<h2>🎓 About Me</h2>
+<section id="about" class="about">
+  <div class="about-grid">
+    <!-- Top row: Picture + Prose -->
+    <div class="about-top">
+      <div class="about-left">
+        <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic">
+      </div>
+      <div class="about-right">
+        <p>
+          I am a Computer Science graduate from Southwestern University (December 2025), where I earned my degree Summa Cum Laude with a 4.0 GPA and a minor in Data Analytics.
+          Prior to transferring to Southwestern, I completed an Associate of Science in Computer Science at Temple College.
+        </p>
+        <p>
+          Through undergraduate research in the <strong>2024 DREU</strong> and <strong>2025 SURF</strong> programs, I gained hands-on experience working with real-world data,
+          developed a SQL-to-Python data pipeline, and supported analytical and research workflows.
+        </p>
+      </div>
+    </div>
+    <!-- Full width: about me text -->
+    <div class="about-full-width">
+      <p>
+        These experiences solidified my interest in data analysis and analytics-focused roles, where I can combine analytical thinking,
+        programming, and careful data validation to support data-driven decision making.
+        I am currently seeking entry-level data analyst or research data analyst positions.
+      </p>
+    </div>
+    <!-- Full width: Short List of interests and skills -->
+    <div class="about-full-width">
+        <ul class="about-list">
+          <li>🔍 Interests: data analysis, exploratory data analysis, data pipelines, research analytics</li>
+          <li>🛠 Tools: Python, SQL, Excel (Pivot Tables), PostgreSQL, GitHub</li>
+          <li>📚 Libraries: Pandas, NumPy, Matplotlib, scikit-learn</li>
+        </ul>
+    </div>
+  </div>
+</section>
+
+  <h2 id="projects">🔬 Projects</h2>
+
+<div class="project-card">
+  <h3>📊 Excel vs. Python: E-Commerce Sales Analysis</h3>
+  <img src="images/2023-ecommerce-analysis.png" alt="screenshot of top of DA project page" class="project-img">
+  <p>
+    A comparative analysis of e-commerce sales data using Excel Pivot Tables and Python (Pandas + Matplotlib) to evaluate analytical workflows and business insights.
+  </p>
+  <a href="/excel_vs_python/index.html" target="_blank" class="button-link">View Analysis</a>
+</div>
+
+<div class="project-card">
+  <h3>🍄 Mushroom Classification with KNN</h3>
+  <a href="images/knn-confusion-matrix.png" target="_blank">
+    <img src="images/knn-thumbnail.png" alt="KNN Result: Confusion Matrix (edible or poisonous)" class="project-img">
+  </a>
+  <p>
+    Built a K-Nearest Neighbors classifier to predict whether mushrooms are edible or poisonous using a classic public dataset.
+  </p>
+  <a href="https://colab.research.google.com/drive/1S2KEWqcU85lXLVU-9YxCCku5MkvbCUBB" target="_blank" class="button-link">
+    View the Colab Notebook
+  </a>
+</div>
+
+<div class="project-card">
+  <h3>🐼 DREU 2024 Research</h3>
+  <a href="images/dreu-full.png" target="_blank">
+    <img src="images/dreu-thumbnail.png" alt="Research & Creative Works (RCW) poster" class="project-img">
+  </a>
+  <p>
+    Built a SQL-to-Python data pipeline and applied network analysis to study student behavior in a Minecraft-based learning environment.
+  </p>
+  <a href="/dreu-2024/index.html" target="_blank" class="button-link">DREU Research Page</a>
+</div>
+  
+<div class="project-card">
+  <h3>🧠 SURF 2025</h3>
+    <div class="project-images">
+      <a href="images/mario-full.png" target="_blank">
+        <img src="images/mario-thumbnail.png" alt="Screenshot of Mario level generation" class="project-img">
+      </a>
+      <a href="images/story-game.png" target="_blank">
+        <img src="images/story-game.png" alt="Screenshot of Multiplayer Story Game" class="project-img">
+      </a>
+    </div>
+  <p>
+    Trained and evaluated diffusion models to generate playable Mario levels and built a real-time multiplayer LLM Story Game using WebSockets.
+  <p>
+    <a href="https://besshagan.github.io/surf/" target="_blank" class="button-link">SURF Research Page</a>
+  </p>
+</div>
+  
+<div class="project-card">
+  <h3>🎮 Capstone: Senior Seminar in Software Engineering</h3>
+  <a href="images/evergrove-poster.png" target="_blank">
+    <img src="images/evergrove-thumbnail.png" alt="Research & Creative Works (RCW) poster" class="project-img">
+  </a>
+  <p>
+    Designed and co-developed Evergrove, an educational game in Godot to teach data science to children.
+  </p>
+    <div class="button-row">
+      <a href="https://su-capstone.itch.io/evergrove" target="_blank" class="button-link">Download and play it on itch.io</a>
+      <a href="https://github.com/besshagan/CapstoneGame" target="_blank" class="button-link">See repo</a>
+    </div>
+</div>
+
+  <h2 id="contact">📬 Contact</h2>
+<section class="contact">
+  <ul>
+    <li>✉️ <a href="mailto:besshagan19@gmail.com">besshagan19@gmail.com</a></li>
+    <li>🐙 <a href="https://github.com/besshagan" target="_blank">GitHub</a></li>
+    <li>🔗 <a href="https://linkedin.com/in/bess-hagan" target="_blank">LinkedIn</a></li>
+  </ul>
+</section>
+
+<div style="text-align: right; margin-top: 1rem;">
+  <a href="#" style="color: var(--teal);">Back to top ↑</a>
+</div>
+  <footer style="text-align: center; font-size: 0.9rem; margin-top: 4rem; color: #777;">
+  <p>Built from scratch with HTML/CSS, AI, and caffeine. ☕</p>
+  </footer>
+
+<script>
+  const toggleBtn = document.getElementById('dark-toggle');
+  const icon = toggleBtn.querySelector('i');
+  const body = document.body;
+
+  // Init
+  if (localStorage.getItem('darkMode') === 'true') {
+    body.classList.add('dark');
+    icon.classList.replace('fa-moon', 'fa-sun');
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    const isDark = body.classList.toggle('dark');
+    icon.classList.replace(isDark ? 'fa-moon' : 'fa-sun', isDark ? 'fa-sun' : 'fa-moon');
+    localStorage.setItem('darkMode', isDark);
+  });
+</script>
+
+</body>
+
+</html>
